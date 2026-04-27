@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "functions": {
+    "api/webhook.js": {
+      "maxDuration": 10,
+      "memory": 1024
+    },
+    "api/scan.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/scan",
+      "destination": "/api/scan.js"
+    },
+    {
+      "source": "/verify",
+      "destination": "/api/scan.js"
+    }
+  ],
+  "env": {
+    "BOT_TOKEN": "@bot-token",
+    "MONGODB_URI": "@mongodb-uri",
+    "WEBAPP_URL": "@webapp-url",
+    "ADMIN_IDS": "@admin-ids"
+  }
+}
